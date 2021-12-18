@@ -1,0 +1,19 @@
+<p *ngIf="loading$ | async; else table">Cargando...</p>
+<ng-template #table>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Species</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor="let character of characters$ | async">
+            <td>{{ character.id }}</td>
+            <td>{{ character.name }}</td>
+            <td>{{ character.status }}</td>
+            <td>{{ character.species }}</td>
+            <td>{{ character.gender }}</td>
+        </tr>
+    </table>
+</ng-template>
